@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+  pet_clinic:
+    image: openjdk:8-jre
+    entrypoint: java -jar /app/app.jar
+    volumes:
+      - ./spring-petclinic:/app:ro
+    ports:
+      - 8080:8080
+
+  hateoas_basic:
+    image: openjdk:8-jre
+    entrypoint: java -jar /app/basics.jar
+    volumes:
+      - ./spring-hateoas:/app:ro
+    ports:
+      - 8081:8080
+
+  hateoas_hypermedia:
+    image: openjdk:8-jre
+    entrypoint: java -jar /app/hypermedia.jar
+    volumes:
+      - ./spring-hateoas:/app:ro
+    ports:
+      - 8082:8080
